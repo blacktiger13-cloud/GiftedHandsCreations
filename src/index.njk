@@ -3,48 +3,42 @@ layout: layouts/base.njk
 description: Veteran-owned, handmade woodcraft — American flag art, wooden heart décor, and custom engraved keepsakes. Heartfelt Handiworks, made one piece at a time.
 permalink: /
 ---
-<section class="hero">
+<section class="hero" style="background-image: url('/assets/images/hero-home.svg');">
   <div class="wrap hero__inner">
-    <div>
-      <p class="hero__eyebrow">Veteran Owned &middot; Hand Made in USA</p>
-      <h1>Heartfelt Handiworks</h1>
-      <p>{{ site.description }}</p>
-      <p>
-        <a class="btn" href="/gallery/">View the Gallery</a>
-        <a class="btn btn--outline" href="/contact/">Get in Touch</a>
-      </p>
-    </div>
-    <div class="hero__image">
-      <img src="/assets/images/hero-home.svg" alt="Hand-crafted wood art by Gifted Hands Creations" loading="eager" width="800" height="600">
-    </div>
+    <h1>{{ site.hero.heading }}</h1>
+    <p>{{ site.hero.subheading }}</p>
+    <p><a class="btn btn--pill btn--hero" href="{{ site.hero.ctaHref }}">{{ site.hero.ctaLabel }}</a></p>
   </div>
 </section>
 
-<section class="section">
+<section class="section section--badges">
   <div class="wrap">
     <ul class="badges" aria-label="Why buy from us">
       {% for badge in site.badges %}
-      <li class="badge">{{ badge.label }}</li>
+      <li class="badge">
+        <img class="badge__icon" src="{{ badge.icon }}" alt="" width="72" height="72" loading="lazy">
+        <p class="badge__label">{{ badge.label }}</p>
+        <p class="badge__desc">{{ badge.description }}</p>
+      </li>
       {% endfor %}
     </ul>
   </div>
 </section>
 
-<section class="section">
+<section class="section section--collections">
   <div class="wrap">
     <div class="section__heading">
-      <h2>Explore the Collections</h2>
-      <p>Every piece is cut, stained, and finished by hand — no two are ever exactly alike.</p>
+      <h2>Our Gallery Collections</h2>
     </div>
-    <div class="card-grid">
+    <div class="collection-grid">
       {% for item in portfolio %}
-      <a class="card" href="/gallery/{{ item.slug }}/">
-        <img src="{{ item.heroImage }}" alt="" loading="lazy" width="800" height="600">
-        <div class="card__body">
-          <h3 class="card__title">{{ item.title }}</h3>
-          <p class="card__desc">{{ item.shortDescription }}</p>
-        </div>
-      </a>
+      <div class="collection-card">
+        <a href="/gallery/{{ item.slug }}/" class="collection-card__image">
+          <img src="{{ item.heroImage }}" alt="" loading="lazy" width="800" height="600">
+        </a>
+        <h3><a href="/gallery/{{ item.slug }}/">{{ item.title }}</a></h3>
+        <p>{{ item.shortDescription }}</p>
+      </div>
       {% endfor %}
     </div>
   </div>

@@ -9,10 +9,32 @@
     "instagram": "https://www.instagram.com/giftedhandscreations",
     "etsy": "https://www.etsy.com/shop/giftedhandscreations"
   },
+  "hero": {
+    "heading": "Heartfelt Handiworks",
+    "subheading": "Where craftsmanship meets emotion in every piece we create. Our artisanal journey is woven with passion and dedication, as we handcraft unique treasures that resonate with the warmth of home.",
+    "ctaLabel": "View Gallery Custom Designs",
+    "ctaHref": "/gallery/"
+  },
   "badges": [
-    { "label": "Veteran Owned" },
-    { "label": "Hand Made in USA" },
-    { "label": "Supreme Quality" },
-    { "label": "Every Product is 1 of 1" }
+    {
+      "label": "VETERAN OWNED",
+      "description": "Gifted Hands Creations is proudly Veteran owned and operated.",
+      "icon": "/assets/images/badge-veteran.svg"
+    },
+    {
+      "label": "HAND MADE IN USA",
+      "description": "All of our products are hand made in the United States of America.",
+      "icon": "/assets/images/badge-handmade.svg"
+    },
+    {
+      "label": "SUPREME QUALITY",
+      "description": "Our products boast the highest quality in the industry, and that's a guarantee.",
+      "icon": "/assets/images/badge-quality.svg"
+    },
+    {
+      "label": "Every Product is 1 of 1",
+      "description": "All of our products are handmade and unique for each customer.",
+      "icon": "/assets/images/badge-oneofone.svg"
+    }
   ]
 }

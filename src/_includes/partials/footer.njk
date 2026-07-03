@@ -1,33 +1,31 @@
 <footer class="site-footer">
   <div class="wrap">
-    <ul class="badges" aria-label="Why buy from us">
-      {% for badge in site.badges %}
-      <li class="badge">{{ badge.label }}</li>
-      {% endfor %}
-    </ul>
-
     <div class="site-footer__grid">
-      <div>
-        <p class="site-footer__name">{{ site.name }}</p>
-        <p class="site-footer__tagline">{{ site.tagline }}</p>
+      <div class="site-footer__col">
+        <h2>Collections</h2>
+        <ul class="footer-links">
+          {% for item in portfolio %}
+          <li><a href="/gallery/{{ item.slug }}/">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
       </div>
 
-      <nav aria-label="Footer">
+      <div class="site-footer__col">
+        <h2>Links</h2>
         <ul class="footer-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/gallery/">Gallery</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
         </ul>
-      </nav>
+      </div>
 
-      <ul class="social-links" aria-label="Social media">
-        {% if site.social.facebook %}<li><a href="{{ site.social.facebook }}">Facebook</a></li>{% endif %}
-        {% if site.social.instagram %}<li><a href="{{ site.social.instagram }}">Instagram</a></li>{% endif %}
-        {% if site.social.etsy %}<li><a href="{{ site.social.etsy }}">Etsy</a></li>{% endif %}
-      </ul>
+      <div class="site-footer__col">
+        <h2>Resources</h2>
+        <ul class="footer-links">
+          <li><a href="/contact/">Contact / Customer Support</a></li>
+        </ul>
+      </div>
     </div>
 
-    <p class="site-footer__legal">&copy; {{ "" | year }} {{ site.name }}. Made by hand, one piece at a time.</p>
+    <p class="site-footer__legal">&copy; {{ "" | year }}, {{ site.name }}</p>
   </div>
 </footer>

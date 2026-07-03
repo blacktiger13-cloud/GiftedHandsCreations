@@ -1,32 +1,33 @@
 <header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="brand" href="/">
-      <span class="brand__mark">GH</span>
-      <span class="brand__text">
-        <span class="brand__name">{{ site.name }}</span>
-        <span class="brand__tagline">{{ site.tagline }}</span>
-      </span>
-    </a>
-
-    <button
-      class="nav-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="primary-nav"
-    >
-      <span class="nav-toggle__bar"></span>
-      <span class="nav-toggle__bar"></span>
-      <span class="nav-toggle__bar"></span>
-      <span class="sr-only">Menu</span>
-    </button>
-
     <nav id="primary-nav" class="primary-nav" aria-label="Primary">
       <ul>
         <li><a href="/"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a></li>
         <li><a href="/gallery/"{% if page.url.startsWith('/gallery/') %} aria-current="page"{% endif %}>Gallery</a></li>
         <li><a href="/about/"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a></li>
-        <li><a href="/contact/"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>Contact</a></li>
+        <li class="primary-nav__mobile-only"><a href="/contact/"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>Contact</a></li>
       </ul>
     </nav>
+
+    <a class="brand" href="/">
+      <span class="brand__mark">{% include "partials/logo-mark.njk" %}</span>
+      <span class="brand__name">{{ site.name }}</span>
+    </a>
+
+    <div class="site-header__actions">
+      <a class="btn btn--pill site-header__cta" href="/contact/">Contact Us</a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
   </div>
 </header>
