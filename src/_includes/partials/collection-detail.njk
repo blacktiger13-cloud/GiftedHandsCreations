@@ -11,10 +11,10 @@
         {% if img.webp %}
         <picture>
           <source srcset="{{ img.webp }}" type="image/webp">
-          <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" width="800" height="800">
+          <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" width="{{ img.w or 800 }}" height="{{ img.h or 800 }}">
         </picture>
         {% else %}
-        <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" width="800" height="800">
+        <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" width="{{ img.w or 800 }}" height="{{ img.h or 800 }}">
         {% endif %}
       </figure>
       {% endfor %}

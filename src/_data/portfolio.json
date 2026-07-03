@@ -12,24 +12,132 @@
     "galleryPageImageWebp": "/assets/images/gallery-page-stars-stripes.webp",
     "galleryPageImageAlt": "Three hand-finished wooden American flags arranged together, including a thin-line tribute flag",
     "images": [
-      { "src": "/assets/images/stars-stripes-01.jpg", "webp": "/assets/images/stars-stripes-01.webp", "alt": "A group of wooden American flags, including two nurse corps tribute flags and two mini flags" },
-      { "src": "/assets/images/stars-stripes-02.jpg", "webp": "/assets/images/stars-stripes-02.webp", "alt": "A wooden flag engraved with a United States Army seal and sergeant major rank, viewed at an angle" },
-      { "src": "/assets/images/stars-stripes-03.jpg", "webp": "/assets/images/stars-stripes-03.webp", "alt": "A weathered wooden American flag displayed on a mantel" },
-      { "src": "/assets/images/stars-stripes-04.jpg", "webp": "/assets/images/stars-stripes-04.webp", "alt": "A wooden flag engraved with a Signal Corps insignia and crossed signal flags" },
-      { "src": "/assets/images/stars-stripes-05.jpg", "webp": "/assets/images/stars-stripes-05.webp", "alt": "Close-up of an engraved Signal Corps crossed-flags and torch emblem" },
-      { "src": "/assets/images/stars-stripes-06.jpg", "webp": "/assets/images/stars-stripes-06.webp", "alt": "Close-up of a full field of hand-routed wooden stars" },
-      { "src": "/assets/images/stars-stripes-07.jpg", "webp": "/assets/images/stars-stripes-07.webp", "alt": "Close-up of an engraved United States Army seal and sergeant major rank insignia" },
-      { "src": "/assets/images/stars-stripes-08.jpg", "webp": "/assets/images/stars-stripes-08.webp", "alt": "A wooden flag engraved with a \"Teach, Inspire, Care\" apple design, thanking a teacher for 20 years of service" },
-      { "src": "/assets/images/stars-stripes-09.jpg", "webp": "/assets/images/stars-stripes-09.webp", "alt": "A wooden flag engraved with a Combat Medic badge" },
-      { "src": "/assets/images/stars-stripes-10.jpg", "webp": "/assets/images/stars-stripes-10.webp", "alt": "A wooden flag engraved with a warrant officer eagle insignia" },
-      { "src": "/assets/images/stars-stripes-11.jpg", "webp": "/assets/images/stars-stripes-11.webp", "alt": "A custom flag split between the American flag and the Canadian flag, commemorating a 2022 Saint Luke's validation event" },
-      { "src": "/assets/images/stars-stripes-12.jpg", "webp": "/assets/images/stars-stripes-12.webp", "alt": "A wooden flag engraved with a map of southeastern states, thanking a leader for their leadership and service" },
-      { "src": "/assets/images/stars-stripes-13.jpg", "webp": "/assets/images/stars-stripes-13.webp", "alt": "A weathered wooden American flag with a distressed, burned finish" },
-      { "src": "/assets/images/stars-stripes-14.jpg", "webp": "/assets/images/stars-stripes-14.webp", "alt": "A wooden American flag in classic red, white, and blue stain" },
-      { "src": "/assets/images/stars-stripes-15.jpg", "webp": "/assets/images/stars-stripes-15.webp", "alt": "Three hand-finished wooden American flags arranged together, including a thin-line tribute flag" },
-      { "src": "/assets/images/stars-stripes-16.jpg", "webp": "/assets/images/stars-stripes-16.webp", "alt": "A wooden American flag built as a display shelf, holding a collection of shot glasses" },
-      { "src": "/assets/images/stars-stripes-17.jpg", "webp": "/assets/images/stars-stripes-17.webp", "alt": "A weathered wooden American flag viewed at an angle, showing its raised wood-grain texture" },
-      { "src": "/assets/images/stars-stripes-18.jpg", "webp": "/assets/images/stars-stripes-18.webp", "alt": "Close-up of a weathered wooden American flag's stars and stripes" }
+      {
+        "src": "/assets/images/stars-stripes-01.jpg",
+        "webp": "/assets/images/stars-stripes-01.webp",
+        "alt": "A group of wooden American flags, including two nurse corps tribute flags and two mini flags",
+        "w": 1952,
+        "h": 937
+      },
+      {
+        "src": "/assets/images/stars-stripes-02.jpg",
+        "webp": "/assets/images/stars-stripes-02.webp",
+        "alt": "A wooden flag engraved with a United States Army seal and sergeant major rank, viewed at an angle",
+        "w": 640,
+        "h": 480
+      },
+      {
+        "src": "/assets/images/stars-stripes-03.jpg",
+        "webp": "/assets/images/stars-stripes-03.webp",
+        "alt": "A weathered wooden American flag displayed on a mantel",
+        "w": 640,
+        "h": 480
+      },
+      {
+        "src": "/assets/images/stars-stripes-04.jpg",
+        "webp": "/assets/images/stars-stripes-04.webp",
+        "alt": "A wooden flag engraved with a Signal Corps insignia and crossed signal flags",
+        "w": 411,
+        "h": 221
+      },
+      {
+        "src": "/assets/images/stars-stripes-05.jpg",
+        "webp": "/assets/images/stars-stripes-05.webp",
+        "alt": "Close-up of an engraved Signal Corps crossed-flags and torch emblem",
+        "w": 435,
+        "h": 246
+      },
+      {
+        "src": "/assets/images/stars-stripes-06.jpg",
+        "webp": "/assets/images/stars-stripes-06.webp",
+        "alt": "Close-up of a full field of hand-routed wooden stars",
+        "w": 434,
+        "h": 246
+      },
+      {
+        "src": "/assets/images/stars-stripes-07.jpg",
+        "webp": "/assets/images/stars-stripes-07.webp",
+        "alt": "Close-up of an engraved United States Army seal and sergeant major rank insignia",
+        "w": 375,
+        "h": 248
+      },
+      {
+        "src": "/assets/images/stars-stripes-08.jpg",
+        "webp": "/assets/images/stars-stripes-08.webp",
+        "alt": "A wooden flag engraved with a \"Teach, Inspire, Care\" apple design, thanking a teacher for 20 years of service",
+        "w": 426,
+        "h": 228
+      },
+      {
+        "src": "/assets/images/stars-stripes-09.jpg",
+        "webp": "/assets/images/stars-stripes-09.webp",
+        "alt": "A wooden flag engraved with a Combat Medic badge",
+        "w": 352,
+        "h": 244
+      },
+      {
+        "src": "/assets/images/stars-stripes-10.jpg",
+        "webp": "/assets/images/stars-stripes-10.webp",
+        "alt": "A wooden flag engraved with a warrant officer eagle insignia",
+        "w": 313,
+        "h": 224
+      },
+      {
+        "src": "/assets/images/stars-stripes-11.jpg",
+        "webp": "/assets/images/stars-stripes-11.webp",
+        "alt": "A custom flag split between the American flag and the Canadian flag, commemorating a 2022 Saint Luke's validation event",
+        "w": 384,
+        "h": 200
+      },
+      {
+        "src": "/assets/images/stars-stripes-12.jpg",
+        "webp": "/assets/images/stars-stripes-12.webp",
+        "alt": "A wooden flag engraved with a map of southeastern states, thanking a leader for their leadership and service",
+        "w": 382,
+        "h": 200
+      },
+      {
+        "src": "/assets/images/stars-stripes-13.jpg",
+        "webp": "/assets/images/stars-stripes-13.webp",
+        "alt": "A weathered wooden American flag with a distressed, burned finish",
+        "w": 428,
+        "h": 227
+      },
+      {
+        "src": "/assets/images/stars-stripes-14.jpg",
+        "webp": "/assets/images/stars-stripes-14.webp",
+        "alt": "A wooden American flag in classic red, white, and blue stain",
+        "w": 434,
+        "h": 245
+      },
+      {
+        "src": "/assets/images/stars-stripes-15.jpg",
+        "webp": "/assets/images/stars-stripes-15.webp",
+        "alt": "Three hand-finished wooden American flags arranged together, including a thin-line tribute flag",
+        "w": 435,
+        "h": 245
+      },
+      {
+        "src": "/assets/images/stars-stripes-16.jpg",
+        "webp": "/assets/images/stars-stripes-16.webp",
+        "alt": "A wooden American flag built as a display shelf, holding a collection of shot glasses",
+        "w": 415,
+        "h": 227
+      },
+      {
+        "src": "/assets/images/stars-stripes-17.jpg",
+        "webp": "/assets/images/stars-stripes-17.webp",
+        "alt": "A weathered wooden American flag viewed at an angle, showing its raised wood-grain texture",
+        "w": 434,
+        "h": 246
+      },
+      {
+        "src": "/assets/images/stars-stripes-18.jpg",
+        "webp": "/assets/images/stars-stripes-18.webp",
+        "alt": "Close-up of a weathered wooden American flag's stars and stripes",
+        "w": 435,
+        "h": 246
+      }
     ]
   },
   {
@@ -44,12 +152,48 @@
     "galleryPageImageWebp": "/assets/images/gallery-page-hearts.webp",
     "galleryPageImageAlt": "A wooden heart-shaped cutting board with \"Love\" carved in script, on a peach background",
     "images": [
-      { "src": "/assets/images/hearts-01.jpg", "webp": "/assets/images/hearts-01.webp", "alt": "A striped wooden heart made from red, black, and natural wood tones, close up" },
-      { "src": "/assets/images/hearts-02.jpg", "webp": "/assets/images/hearts-02.webp", "alt": "A dark charred wooden heart displayed on a mantel among candles and flowers" },
-      { "src": "/assets/images/hearts-03.jpg", "webp": "/assets/images/hearts-03.webp", "alt": "A wooden serving tray with an inlaid heart, close up on the walnut grain" },
-      { "src": "/assets/images/hearts-04.jpg", "webp": "/assets/images/hearts-04.webp", "alt": "A dark charred wooden heart displayed on a mantel among candles and flowers, wider view" },
-      { "src": "/assets/images/hearts-05.jpg", "webp": "/assets/images/hearts-05.webp", "alt": "A striped wooden heart made from red, black, and natural wood tones, resting on a countertop" },
-      { "src": "/assets/images/hearts-06.jpg", "webp": "/assets/images/hearts-06.webp", "alt": "A wooden serving tray with cutout handles and an inlaid heart in the center" }
+      {
+        "src": "/assets/images/hearts-01.jpg",
+        "webp": "/assets/images/hearts-01.webp",
+        "alt": "A striped wooden heart made from red, black, and natural wood tones, close up",
+        "w": 435,
+        "h": 436
+      },
+      {
+        "src": "/assets/images/hearts-02.jpg",
+        "webp": "/assets/images/hearts-02.webp",
+        "alt": "A dark charred wooden heart displayed on a mantel among candles and flowers",
+        "w": 434,
+        "h": 436
+      },
+      {
+        "src": "/assets/images/hearts-03.jpg",
+        "webp": "/assets/images/hearts-03.webp",
+        "alt": "A wooden serving tray with an inlaid heart, close up on the walnut grain",
+        "w": 435,
+        "h": 436
+      },
+      {
+        "src": "/assets/images/hearts-04.jpg",
+        "webp": "/assets/images/hearts-04.webp",
+        "alt": "A dark charred wooden heart displayed on a mantel among candles and flowers, wider view",
+        "w": 481,
+        "h": 640
+      },
+      {
+        "src": "/assets/images/hearts-05.jpg",
+        "webp": "/assets/images/hearts-05.webp",
+        "alt": "A striped wooden heart made from red, black, and natural wood tones, resting on a countertop",
+        "w": 481,
+        "h": 640
+      },
+      {
+        "src": "/assets/images/hearts-06.jpg",
+        "webp": "/assets/images/hearts-06.webp",
+        "alt": "A wooden serving tray with cutout handles and an inlaid heart in the center",
+        "w": 1200,
+        "h": 900
+      }
     ]
   },
   {
@@ -64,12 +208,30 @@
     "galleryPageImageWebp": "/assets/images/gallery-page-keepsakes.webp",
     "galleryPageImageAlt": "A striped wooden cutting board engraved with a sleeping cat and star design",
     "images": [
-      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Engraved wooden serving tray with inlaid heart" },
-      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Striped wood cutting board" },
-      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Engraved kitchen sign, the kitchen is the heart of the home" },
-      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Custom wood puzzle keepsake" },
-      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Engraved grilling sign with crossed utensils" },
-      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Mosaic wood inlay panel" }
+      {
+        "src": "/assets/images/collection-crafted-keepsakes.svg",
+        "alt": "Engraved wooden serving tray with inlaid heart"
+      },
+      {
+        "src": "/assets/images/collection-crafted-keepsakes.svg",
+        "alt": "Striped wood cutting board"
+      },
+      {
+        "src": "/assets/images/collection-crafted-keepsakes.svg",
+        "alt": "Engraved kitchen sign, the kitchen is the heart of the home"
+      },
+      {
+        "src": "/assets/images/collection-crafted-keepsakes.svg",
+        "alt": "Custom wood puzzle keepsake"
+      },
+      {
+        "src": "/assets/images/collection-crafted-keepsakes.svg",
+        "alt": "Engraved grilling sign with crossed utensils"
+      },
+      {
+        "src": "/assets/images/collection-crafted-keepsakes.svg",
+        "alt": "Mosaic wood inlay panel"
+      }
     ]
   }
 ]
