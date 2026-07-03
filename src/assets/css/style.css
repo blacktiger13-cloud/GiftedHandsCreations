@@ -497,14 +497,18 @@ h1, h2, h3, h4 {
 
 .gallery-grid figure {
   margin: 0;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
+  background: var(--color-cream-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gallery-grid figure img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* ---------- Collection pager (prev / next) ---------- */
