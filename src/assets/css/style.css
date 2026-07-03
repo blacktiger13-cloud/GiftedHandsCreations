@@ -118,8 +118,9 @@ h1, h2, h3, h4 {
 }
 
 .brand__mark {
-  display: inline-flex;
-  color: var(--color-ink);
+  display: block;
+  height: 2.75rem;
+  width: auto;
 }
 
 .brand__name {
@@ -372,6 +373,7 @@ h1, h2, h3, h4 {
 .badge__icon {
   width: 4.5rem;
   height: 4.5rem;
+  object-fit: contain;
   margin-bottom: 0.85rem;
 }
 
@@ -590,12 +592,11 @@ h1, h2, h3, h4 {
   object-fit: cover;
 }
 
-.signature {
-  font-family: "Segoe Script", "Bradley Hand", "Brush Script MT", "Snell Roundhand", "Apple Chancery", cursive;
-  font-size: 2.25rem;
-  color: var(--color-ink);
-  margin-top: 2rem;
-  font-style: italic;
+.signature-img {
+  width: 14rem;
+  height: auto;
+  object-fit: contain;
+  margin-top: 1.5rem;
 }
 
 /* ---------- Prose ---------- */

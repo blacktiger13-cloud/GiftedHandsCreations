@@ -19,22 +19,22 @@
     {
       "label": "VETERAN OWNED",
       "description": "Gifted Hands Creations is proudly Veteran owned and operated.",
-      "icon": "/assets/images/badge-veteran.svg"
+      "icon": "/assets/images/badge-veteran-owned.png"
     },
     {
       "label": "HAND MADE IN USA",
       "description": "All of our products are hand made in the United States of America.",
-      "icon": "/assets/images/badge-handmade.svg"
+      "icon": "/assets/images/made_in_usa-web.png"
     },
     {
       "label": "SUPREME QUALITY",
       "description": "Our products boast the highest quality in the industry, and that's a guarantee.",
-      "icon": "/assets/images/badge-quality.svg"
+      "icon": "/assets/images/supreme-quality-web.png"
     },
     {
       "label": "Every Product is 1 of 1",
       "description": "All of our products are handmade and unique for each customer.",
-      "icon": "/assets/images/badge-oneofone.svg"
+      "icon": "/assets/images/one-of-one-web.png"
     }
   ]
 }
