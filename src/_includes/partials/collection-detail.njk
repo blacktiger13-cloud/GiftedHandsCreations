@@ -1,8 +1,28 @@
 {% macro collectionDetail(slug) %}
 {% for item in portfolio %}
 {% if item.slug == slug %}
+{% set prevItem = portfolio[loop.index0 - 1] if loop.index0 > 0 else null %}
+{% set nextItem = portfolio[loop.index0 + 1] if loop.index0 < portfolio.length - 1 else null %}
 <section class="section section--tan">
   <div class="wrap">
+    {% if prevItem or nextItem %}
+    <div class="collection-pager collection-pager--top">
+      {% if prevItem %}
+      <a class="collection-pager__link collection-pager__link--prev" href="/gallery/{{ prevItem.slug }}/">
+        <span aria-hidden="true">&lsaquo;</span> {{ prevItem.navTitle or prevItem.title }}
+      </a>
+      {% else %}
+      <span></span>
+      {% endif %}
+
+      {% if nextItem %}
+      <a class="collection-pager__link collection-pager__link--next" href="/gallery/{{ nextItem.slug }}/">
+        {{ nextItem.navTitle or nextItem.title }} <span aria-hidden="true">&rsaquo;</span>
+      </a>
+      {% endif %}
+    </div>
+    {% endif %}
+
     <h1 class="page-heading">{{ item.navTitle or item.title }}</h1>
 
     <div class="gallery-grid" style="--tile-ratio: {{ item.imageAspectRatio or '4 / 3' }};">
@@ -21,8 +41,7 @@
     </div>
 
     <div class="collection-pager">
-      {% if loop.index0 > 0 %}
-      {% set prevItem = portfolio[loop.index0 - 1] %}
+      {% if prevItem %}
       <a class="collection-pager__link collection-pager__link--prev" href="/gallery/{{ prevItem.slug }}/">
         <span aria-hidden="true">&lsaquo;</span> {{ prevItem.navTitle or prevItem.title }}
       </a>
@@ -30,8 +49,7 @@
       <span></span>
       {% endif %}
 
-      {% if loop.index0 < portfolio.length - 1 %}
-      {% set nextItem = portfolio[loop.index0 + 1] %}
+      {% if nextItem %}
       <a class="collection-pager__link collection-pager__link--next" href="/gallery/{{ nextItem.slug }}/">
         {{ nextItem.navTitle or nextItem.title }} <span aria-hidden="true">&rsaquo;</span>
       </a>

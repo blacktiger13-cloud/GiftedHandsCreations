@@ -534,6 +534,24 @@ h1, h2, h3, h4 {
   margin-left: auto;
 }
 
+.collection-pager--top {
+  padding-top: 0;
+  padding-bottom: 1.5rem;
+}
+
+.collection-pager--top .collection-pager__link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+  text-decoration: underline;
+}
+
+.collection-pager--top .collection-pager__link:hover,
+.collection-pager--top .collection-pager__link:focus {
+  color: var(--color-gold);
+}
+
 /* ---------- Showcase grid (gallery landing) ---------- */
 
 .showcase-grid {
