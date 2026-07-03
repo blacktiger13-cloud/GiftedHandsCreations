@@ -5,7 +5,9 @@
     "navTitle": "Stars and Stripes",
     "shortDescription": "Celebrate patriotism the handcrafted way. Our American flag art blends rustic textures with enduring style — a striking tribute to home, service, freedom, or your favorite business/organization.",
     "description": "Each flag starts as raw, rough-cut lumber before it's layered, stained, and distressed by hand into a piece that feels like it's been in the family for generations. No two boards weather quite the same way, so no two flags ever come out alike.",
-    "heroImage": "/assets/images/collection-stars-and-stripes.svg",
+    "heroImage": "/assets/images/gallery-collection-stars-stripes.jpg",
+    "heroImageWebp": "/assets/images/gallery-collection-stars-stripes.webp",
+    "heroImageAlt": "A weathered wooden American flag with distressed stars and stripes",
     "images": [
       { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Assortment of hand-finished wooden American flags" },
       { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a United States Army seal" },
@@ -23,7 +25,9 @@
     "title": "From the Heart",
     "shortDescription": "Bring warmth into any space with our collection of wooden hearts and love-inspired décor.",
     "description": "Warm, simple, and made to be given. This collection covers hand-cut wooden hearts, layered love-note signs, and small accent pieces meant for a mantel, a nursery shelf, or a gift that says more than a card ever could.",
-    "heroImage": "/assets/images/collection-from-the-heart.svg",
+    "heroImage": "/assets/images/gallery-collection-hearts.jpg",
+    "heroImageWebp": "/assets/images/gallery-collection-hearts.webp",
+    "heroImageAlt": "A wooden heart cutting board with \"Love\" carved in script",
     "images": [
       { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Layered wooden heart wall décor in stained finish" },
       { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Small hand-cut wood hearts arranged on a mantel" },
@@ -37,7 +41,9 @@
     "title": "Crafted Keepsakes",
     "shortDescription": "A thoughtful selection of handmade gifts, curated with intention. For milestones, memories, or just because.",
     "description": "Personalized, engraved keepsakes built for milestones — a family name sign, a wedding date plaque, a memorial piece. Every order in this collection is one-of-one, engraved and finished by hand to fit exactly what the moment calls for.",
-    "heroImage": "/assets/images/collection-crafted-keepsakes.svg",
+    "heroImage": "/assets/images/gallery-collection-keepsakes.jpg",
+    "heroImageWebp": "/assets/images/gallery-collection-keepsakes.webp",
+    "heroImageAlt": "A wooden cutting board engraved with a cat design",
     "images": [
       { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Engraved wooden serving tray with inlaid heart" },
       { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Striped wood cutting board" },

@@ -446,7 +446,7 @@ h1, h2, h3, h4 {
 
 .collection-card__image {
   display: block;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 460 / 195;
   overflow: hidden;
   margin-bottom: 1.25rem;
 }

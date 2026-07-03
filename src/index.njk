@@ -34,7 +34,10 @@ permalink: /
       {% for item in portfolio %}
       <div class="collection-card">
         <a href="/gallery/{{ item.slug }}/" class="collection-card__image">
-          <img src="{{ item.heroImage }}" alt="" loading="lazy" width="800" height="600">
+          <picture>
+            <source srcset="{{ item.heroImageWebp }}" type="image/webp">
+            <img src="{{ item.heroImage }}" alt="{{ item.heroImageAlt }}" loading="lazy" width="460" height="195">
+          </picture>
         </a>
         <h3><a href="/gallery/{{ item.slug }}/">{{ item.title }}</a></h3>
         <p>{{ item.shortDescription }}</p>
