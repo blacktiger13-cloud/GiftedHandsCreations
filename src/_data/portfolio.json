@@ -44,11 +44,12 @@
     "galleryPageImageWebp": "/assets/images/gallery-page-hearts.webp",
     "galleryPageImageAlt": "A wooden heart-shaped cutting board with \"Love\" carved in script, on a peach background",
     "images": [
-      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Layered wooden heart wall décor in stained finish" },
-      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Small hand-cut wood hearts arranged on a mantel" },
-      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Inlaid wood heart cutting board" },
-      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Mosaic wooden heart wall art" },
-      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Rustic wooden heart sign with hand-lettered accent" }
+      { "src": "/assets/images/hearts-01.jpg", "webp": "/assets/images/hearts-01.webp", "alt": "A striped wooden heart made from red, black, and natural wood tones, close up" },
+      { "src": "/assets/images/hearts-02.jpg", "webp": "/assets/images/hearts-02.webp", "alt": "A dark charred wooden heart displayed on a mantel among candles and flowers" },
+      { "src": "/assets/images/hearts-03.jpg", "webp": "/assets/images/hearts-03.webp", "alt": "A wooden serving tray with an inlaid heart, close up on the walnut grain" },
+      { "src": "/assets/images/hearts-04.jpg", "webp": "/assets/images/hearts-04.webp", "alt": "A dark charred wooden heart displayed on a mantel among candles and flowers, wider view" },
+      { "src": "/assets/images/hearts-05.jpg", "webp": "/assets/images/hearts-05.webp", "alt": "A striped wooden heart made from red, black, and natural wood tones, resting on a countertop" },
+      { "src": "/assets/images/hearts-06.jpg", "webp": "/assets/images/hearts-06.webp", "alt": "A wooden serving tray with cutout handles and an inlaid heart in the center" }
     ]
   },
   {

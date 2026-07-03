@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d">
-  <title id="t">Placeholder photo — From the Heart</title>
-  <desc id="d">Photo coming soon — wooden heart décor</desc>
-  <rect width="800" height="600" fill="#5c3a22"/>
-  <path d="M400 470 C 260 360, 200 260, 260 190 C 310 130, 380 150, 400 220 C 420 150, 490 130, 540 190 C 600 260, 540 360, 400 470 Z" fill="#b8862f"/>
-  <text x="400" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#faf5ea">From the Heart</text>
-  <text x="400" y="575" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="18" fill="#f0e6d2">Photo coming soon</text>
-</svg>
