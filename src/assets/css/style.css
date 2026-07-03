@@ -549,6 +549,7 @@ h1, h2, h3, h4 {
 }
 
 .showcase-grid__item {
+  position: relative;
   display: block;
   aspect-ratio: 1 / 1;
   overflow: hidden;
@@ -562,8 +563,47 @@ h1, h2, h3, h4 {
 }
 
 .showcase-grid__item:hover img,
-.showcase-grid__item:focus img {
+.showcase-grid__item:focus-visible img {
   transform: scale(1.03);
+}
+
+.showcase-grid__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 242, 230, 0.78);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.showcase-grid__title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--color-ink);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.showcase-grid__item:hover .showcase-grid__overlay,
+.showcase-grid__item:hover .showcase-grid__title,
+.showcase-grid__item:focus-visible .showcase-grid__overlay,
+.showcase-grid__item:focus-visible .showcase-grid__title {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-grid__item img,
+  .showcase-grid__overlay,
+  .showcase-grid__title {
+    transition: none;
+  }
 }
 
 /* ---------- Split section (two-column: text + image/form) ---------- */

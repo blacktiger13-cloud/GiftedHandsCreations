@@ -8,6 +8,9 @@
     "heroImage": "/assets/images/gallery-collection-stars-stripes.jpg",
     "heroImageWebp": "/assets/images/gallery-collection-stars-stripes.webp",
     "heroImageAlt": "A weathered wooden American flag with distressed stars and stripes",
+    "galleryPageImage": "/assets/images/gallery-page-stars-stripes.jpg",
+    "galleryPageImageWebp": "/assets/images/gallery-page-stars-stripes.webp",
+    "galleryPageImageAlt": "Three hand-finished wooden American flags arranged together, including a thin-line tribute flag",
     "images": [
       { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Assortment of hand-finished wooden American flags" },
       { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a United States Army seal" },
@@ -28,6 +31,9 @@
     "heroImage": "/assets/images/gallery-collection-hearts.jpg",
     "heroImageWebp": "/assets/images/gallery-collection-hearts.webp",
     "heroImageAlt": "A wooden heart cutting board with \"Love\" carved in script",
+    "galleryPageImage": "/assets/images/gallery-page-hearts.jpg",
+    "galleryPageImageWebp": "/assets/images/gallery-page-hearts.webp",
+    "galleryPageImageAlt": "A wooden heart-shaped cutting board with \"Love\" carved in script, on a peach background",
     "images": [
       { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Layered wooden heart wall décor in stained finish" },
       { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Small hand-cut wood hearts arranged on a mantel" },
@@ -44,6 +50,9 @@
     "heroImage": "/assets/images/gallery-collection-keepsakes.jpg",
     "heroImageWebp": "/assets/images/gallery-collection-keepsakes.webp",
     "heroImageAlt": "A wooden cutting board engraved with a cat design",
+    "galleryPageImage": "/assets/images/gallery-page-keepsakes.jpg",
+    "galleryPageImageWebp": "/assets/images/gallery-page-keepsakes.webp",
+    "galleryPageImageAlt": "A striped wooden cutting board engraved with a sleeping cat and star design",
     "images": [
       { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Engraved wooden serving tray with inlaid heart" },
       { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Striped wood cutting board" },

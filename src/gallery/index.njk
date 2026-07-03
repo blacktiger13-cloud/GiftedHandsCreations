@@ -10,9 +10,11 @@ permalink: /gallery/
       {% for item in portfolio %}
       <a href="/gallery/{{ item.slug }}/" class="showcase-grid__item" aria-label="{{ item.title }}">
         <picture>
-          <source srcset="{{ item.heroImageWebp }}" type="image/webp">
-          <img src="{{ item.heroImage }}" alt="{{ item.heroImageAlt }}" loading="lazy" width="460" height="195">
+          <source srcset="{{ item.galleryPageImageWebp }}" type="image/webp">
+          <img src="{{ item.galleryPageImage }}" alt="{{ item.galleryPageImageAlt }}" loading="lazy" width="1000" height="667">
         </picture>
+        <span class="showcase-grid__overlay" aria-hidden="true"></span>
+        <span class="showcase-grid__title" aria-hidden="true">{{ item.navTitle or item.title }}</span>
       </a>
       {% endfor %}
     </div>
