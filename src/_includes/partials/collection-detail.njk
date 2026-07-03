@@ -5,7 +5,7 @@
   <div class="wrap">
     <h1 class="page-heading">{{ item.navTitle or item.title }}</h1>
 
-    <div class="gallery-grid">
+    <div class="gallery-grid" style="--tile-ratio: {{ item.imageAspectRatio or '4 / 3' }};">
       {% for img in item.images %}
       <figure>
         {% if img.webp %}

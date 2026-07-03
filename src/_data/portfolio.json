@@ -11,6 +11,7 @@
     "galleryPageImage": "/assets/images/gallery-page-stars-stripes.jpg",
     "galleryPageImageWebp": "/assets/images/gallery-page-stars-stripes.webp",
     "galleryPageImageAlt": "Three hand-finished wooden American flags arranged together, including a thin-line tribute flag",
+    "imageAspectRatio": "16 / 9",
     "images": [
       {
         "src": "/assets/images/stars-stripes-01.jpg",
@@ -151,6 +152,7 @@
     "galleryPageImage": "/assets/images/gallery-page-hearts.jpg",
     "galleryPageImageWebp": "/assets/images/gallery-page-hearts.webp",
     "galleryPageImageAlt": "A wooden heart-shaped cutting board with \"Love\" carved in script, on a peach background",
+    "imageAspectRatio": "1 / 1",
     "images": [
       {
         "src": "/assets/images/hearts-01.jpg",
@@ -207,6 +209,7 @@
     "galleryPageImage": "/assets/images/gallery-page-keepsakes.jpg",
     "galleryPageImageWebp": "/assets/images/gallery-page-keepsakes.webp",
     "galleryPageImageAlt": "A striped wooden cutting board engraved with a sleeping cat and star design",
+    "imageAspectRatio": "4 / 3",
     "images": [
       {
         "src": "/assets/images/collection-crafted-keepsakes.svg",
