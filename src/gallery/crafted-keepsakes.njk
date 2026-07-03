@@ -2,29 +2,6 @@
 layout: layouts/base.njk
 title: Crafted Keepsakes
 description: Custom engraved gifts, made to hold a name, a date, or a memory.
-slug: crafted-keepsakes
 ---
-{% for item in portfolio %}{% if item.slug == slug %}
-<section class="section">
-  <div class="wrap">
-    <p><a href="/gallery/">&larr; Back to Gallery</a></p>
-    <div class="collection-intro">
-      <div class="collection-intro__image">
-        <img src="{{ item.heroImage }}" alt="" loading="eager" width="800" height="600">
-      </div>
-      <div>
-        <h1>{{ item.title }}</h1>
-        <p>{{ item.description }}</p>
-      </div>
-    </div>
-
-    <div class="gallery-grid">
-      {% for img in item.images %}
-      <figure>
-        <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" width="800" height="600">
-      </figure>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}{% endfor %}
+{% from "partials/collection-detail.njk" import collectionDetail with context %}
+{{ collectionDetail("crafted-keepsakes") }}

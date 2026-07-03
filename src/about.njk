@@ -1,30 +1,33 @@
 ---
 layout: layouts/base.njk
 title: About
-description: The story behind Gifted Hands Creations — a veteran-owned, handmade woodcraft shop built on craftsmanship and care.
+description: The story behind Gifted Hands Creations — a veteran-owned woodshop making handcrafted American flag wall art and custom décor.
 permalink: /about/
 ---
-<section class="section">
-  <div class="wrap">
-    <div class="collection-intro">
-      <div class="collection-intro__image">
-        <img src="/assets/images/about-maker.svg" alt="" loading="lazy" width="800" height="600">
-      </div>
-      <div>
-        <h1>Our Story</h1>
-        <p>Gifted Hands Creations started the way most good things in a workshop do — with scrap wood, a little too much free time, and a stubborn need to make something with our hands.</p>
-      </div>
+{% from "partials/contact-form.njk" import contactForm %}
+<section class="section section--tan">
+  <div class="wrap split-section">
+    <div>
+      <h1>Who we are</h1>
+      <p>I am the owner, military veteran, and craftsman of a business doing what I love, creating handcrafted wooden American flag wall art and other décor pieces just as you want them designed. All flags are unique; each is handmade, and no flag is the same.</p>
+      <p>We are dedicated to making burned, charred, rustic, and wooden American flags. These flags are made for wall art, decor, or gifting to your favorite veteran, first responder, or friend. Your piece(s) will be made based on your custom design, or feel free to choose from our standard designs, as they are all unique in their own way. No job is too big or small, as each is made to order, making all flags unique.</p>
+      <p>It is an honor to be able to create a flag that you will display in your home or office for years to come. I am grateful each time someone provides me that honor, and I do not take this job lightly.</p>
+      <p class="signature">Sheldon L. Jackson</p>
     </div>
+    <div>
+      <img src="/assets/images/about-workbench.svg" alt="" loading="lazy" width="900" height="700">
+    </div>
+  </div>
+</section>
 
-    <div class="prose">
-      <h2>Veteran Owned, Hand Made</h2>
-      <p>This shop is veteran-owned, and that shows up in how we work: attention to detail, respect for the material, and no shortcuts. Every flag, heart, and keepsake that leaves this shop passes through the same hands that cut, sanded, stained, and finished it.</p>
-
-      <h2>Craftsmanship Philosophy</h2>
-      <p>We work in real wood, not veneer — which means grain, knots, and a little natural variation in every board. We don't hide that; we build around it. It's why every product here is one of one. Two pieces might share a pattern, but the wood underneath never behaves quite the same way twice.</p>
-
-      <h2>Where We Are Now</h2>
-      <p>The shop isn't actively taking orders at the moment, but this site stays up as a home for our work and a way for people to reach out. If you're interested in a piece or want to know when we're back to making and shipping, head over to the <a href="/contact/">contact page</a>.</p>
+<section class="section section--mauve">
+  <div class="wrap split-section">
+    <div>
+      <h2>Contact us</h2>
+      <p>Interested in working together? Fill out some info and we will be in touch shortly. We can't wait to hear from you!</p>
+    </div>
+    <div>
+      {{ contactForm("Submit") }}
     </div>
   </div>
 </section>

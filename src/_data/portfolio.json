@@ -2,14 +2,20 @@
   {
     "slug": "stars-and-stripes",
     "title": "Stars & Stripes",
+    "navTitle": "Stars and Stripes",
     "shortDescription": "Celebrate patriotism the handcrafted way. Our American flag art blends rustic textures with enduring style — a striking tribute to home, service, freedom, or your favorite business/organization.",
     "description": "Each flag starts as raw, rough-cut lumber before it's layered, stained, and distressed by hand into a piece that feels like it's been in the family for generations. No two boards weather quite the same way, so no two flags ever come out alike.",
     "heroImage": "/assets/images/collection-stars-and-stripes.svg",
     "images": [
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Hand-finished wooden American flag with distressed stars and stripes" },
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Rustic wood flag art mounted on a barn-board backing" },
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Small tabletop wooden flag with aged stain finish" },
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Layered wood flag art with routed stars" }
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Assortment of hand-finished wooden American flags" },
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a United States Army seal" },
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a Signal Corps insignia" },
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with crossed signal flags" },
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag with a full field of routed stars" },
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a United States Army seal and rank insignia" },
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a teach, inspire, care apple design" },
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a combat medic badge" },
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a warrant officer eagle insignia" }
     ]
   },
   {
@@ -20,9 +26,10 @@
     "heroImage": "/assets/images/collection-from-the-heart.svg",
     "images": [
       { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Layered wooden heart wall décor in stained finish" },
-      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Small hand-cut wood hearts arranged on a shelf" },
-      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Rustic wooden heart sign with hand-lettered accent" },
-      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Wood heart ornament with burned edge detail" }
+      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Small hand-cut wood hearts arranged on a mantel" },
+      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Inlaid wood heart cutting board" },
+      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Mosaic wooden heart wall art" },
+      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Rustic wooden heart sign with hand-lettered accent" }
     ]
   },
   {
@@ -32,10 +39,12 @@
     "description": "Personalized, engraved keepsakes built for milestones — a family name sign, a wedding date plaque, a memorial piece. Every order in this collection is one-of-one, engraved and finished by hand to fit exactly what the moment calls for.",
     "heroImage": "/assets/images/collection-crafted-keepsakes.svg",
     "images": [
-      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Engraved wooden family name sign" },
-      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Custom engraved keepsake box with lid detail" },
-      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Personalized wood plaque with engraved date" },
-      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Hand-engraved memorial keepsake piece" }
+      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Engraved wooden serving tray with inlaid heart" },
+      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Striped wood cutting board" },
+      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Engraved kitchen sign, the kitchen is the heart of the home" },
+      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Custom wood puzzle keepsake" },
+      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Engraved grilling sign with crossed utensils" },
+      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Mosaic wood inlay panel" }
     ]
   }
 ]

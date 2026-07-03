@@ -14,6 +14,7 @@
   --color-brown-deep: #2b2019;
   --color-tan-cta: #8a7358;
   --color-tan-cta-dark: #705c46;
+  --color-mauve: #b29c84;
   --color-white: #ffffff;
 
   --font-heading: Georgia, "Times New Roman", serif;
@@ -335,6 +336,17 @@ h1, h2, h3, h4 {
   color: var(--color-white);
 }
 
+.btn--dark {
+  background: var(--color-brown-deep);
+  border-color: var(--color-brown-deep);
+}
+
+.btn--dark:hover,
+.btn--dark:focus {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
 /* ---------- Trust badges ---------- */
 
 .section--badges {
@@ -390,14 +402,24 @@ h1, h2, h3, h4 {
   padding-block: 3.5rem;
 }
 
-.section--collections {
+.section--tan {
   background: var(--color-cream-dark);
+}
+
+.section--mauve {
+  background: var(--color-mauve);
 }
 
 .section__heading {
   text-align: center;
   max-width: 42rem;
   margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+.page-heading {
+  text-align: center;
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
   margin-bottom: 2.5rem;
 }
 
@@ -460,8 +482,9 @@ h1, h2, h3, h4 {
 
 .gallery-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
   grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 3rem;
 }
 
 @media (min-width: 640px) {
@@ -472,38 +495,107 @@ h1, h2, h3, h4 {
 
 .gallery-grid figure {
   margin: 0;
-  background: var(--color-white);
-  border-radius: var(--radius);
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--color-cream-dark);
 }
 
-.gallery-grid figcaption {
-  padding: 0.6rem 0.75rem;
-  font-size: 0.8rem;
-  color: var(--color-navy);
+.gallery-grid figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* ---------- Collection intro ---------- */
+/* ---------- Collection pager (prev / next) ---------- */
 
-.collection-intro {
-  display: grid;
-  gap: 2rem;
+.collection-pager {
+  display: flex;
   align-items: center;
-  margin-bottom: 2.5rem;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+
+.collection-pager__link {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.collection-pager__link:hover,
+.collection-pager__link:focus {
+  color: var(--color-gold);
+}
+
+.collection-pager__link--next {
+  margin-left: auto;
+}
+
+/* ---------- Showcase grid (gallery landing) ---------- */
+
+.showcase-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .showcase-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.showcase-grid__item {
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.showcase-grid__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.showcase-grid__item:hover img,
+.showcase-grid__item:focus img {
+  transform: scale(1.03);
+}
+
+/* ---------- Split section (two-column: text + image/form) ---------- */
+
+.split-section {
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
 }
 
 @media (min-width: 768px) {
-  .collection-intro {
+  .split-section {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.collection-intro__image {
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+.split-section h1,
+.split-section h2 {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  margin-bottom: 1.25rem;
+}
+
+.split-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.signature {
+  font-family: "Segoe Script", "Bradley Hand", "Brush Script MT", "Snell Roundhand", "Apple Chancery", cursive;
+  font-size: 2.25rem;
+  color: var(--color-ink);
+  margin-top: 2rem;
+  font-style: italic;
 }
 
 /* ---------- Prose ---------- */
@@ -548,16 +640,34 @@ h1, h2, h3, h4 {
   outline-offset: 1px;
 }
 
-.contact-methods {
+.form-group {
   display: grid;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 0.5rem;
 }
 
-@media (min-width: 768px) {
-  .contact-methods {
+.form-group__label {
+  display: block;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.form-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 480px) {
+  .form-row {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.required {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-ink-muted);
+  font-size: 0.85em;
 }
 
 /* ---------- Footer ---------- */

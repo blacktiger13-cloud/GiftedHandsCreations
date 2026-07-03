@@ -1,0 +1,35 @@
+{% macro collectionDetail(slug) %}
+{% for item in portfolio %}
+{% if item.slug == slug %}
+<section class="section section--tan">
+  <div class="wrap">
+    <h1 class="page-heading">{{ item.navTitle or item.title }}</h1>
+
+    <div class="gallery-grid">
+      {% for img in item.images %}
+      <figure><img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" width="800" height="800"></figure>
+      {% endfor %}
+    </div>
+
+    <div class="collection-pager">
+      {% if loop.index0 > 0 %}
+      {% set prevItem = portfolio[loop.index0 - 1] %}
+      <a class="collection-pager__link collection-pager__link--prev" href="/gallery/{{ prevItem.slug }}/">
+        <span aria-hidden="true">&lsaquo;</span> {{ prevItem.navTitle or prevItem.title }}
+      </a>
+      {% else %}
+      <span></span>
+      {% endif %}
+
+      {% if loop.index0 < portfolio.length - 1 %}
+      {% set nextItem = portfolio[loop.index0 + 1] %}
+      <a class="collection-pager__link collection-pager__link--next" href="/gallery/{{ nextItem.slug }}/">
+        {{ nextItem.navTitle or nextItem.title }} <span aria-hidden="true">&rsaquo;</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endfor %}
+{% endmacro %}

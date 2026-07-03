@@ -4,21 +4,13 @@ title: Gallery
 description: Browse handmade wood art from Gifted Hands Creations — American flag art, wooden heart décor, and custom engraved keepsakes.
 permalink: /gallery/
 ---
-<section class="section section--collections">
+<section class="section section--tan">
   <div class="wrap">
-    <div class="section__heading">
-      <h1>Gallery</h1>
-      <p>Three collections, all made by hand. These are portfolio pieces — reach out through the <a href="/contact/">contact page</a> if something catches your eye.</p>
-    </div>
-    <div class="collection-grid">
+    <div class="showcase-grid">
       {% for item in portfolio %}
-      <div class="collection-card">
-        <a href="/gallery/{{ item.slug }}/" class="collection-card__image">
-          <img src="{{ item.heroImage }}" alt="" loading="lazy" width="800" height="600">
-        </a>
-        <h2><a href="/gallery/{{ item.slug }}/">{{ item.title }}</a></h2>
-        <p>{{ item.shortDescription }}</p>
-      </div>
+      <a href="/gallery/{{ item.slug }}/" class="showcase-grid__item" aria-label="{{ item.title }}">
+        <img src="{{ item.heroImage }}" alt="" loading="lazy" width="800" height="800">
+      </a>
       {% endfor %}
     </div>
   </div>
