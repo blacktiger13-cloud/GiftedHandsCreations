@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "stars-and-stripes",
+    "title": "Stars & Stripes",
+    "shortDescription": "American flag wood art, hand-cut and finished with a rustic, weathered touch.",
+    "description": "Each flag starts as raw, rough-cut lumber before it's layered, stained, and distressed by hand into a piece that feels like it's been in the family for generations. No two boards weather quite the same way, so no two flags ever come out alike.",
+    "heroImage": "/assets/images/collection-stars-and-stripes.svg",
+    "images": [
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Hand-finished wooden American flag with distressed stars and stripes" },
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Rustic wood flag art mounted on a barn-board backing" },
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Small tabletop wooden flag with aged stain finish" },
+      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Layered wood flag art with routed stars" }
+    ]
+  },
+  {
+    "slug": "from-the-heart",
+    "title": "From the Heart",
+    "shortDescription": "Wooden heart décor and love-themed pieces for the ones who matter most.",
+    "description": "Warm, simple, and made to be given. This collection covers hand-cut wooden hearts, layered love-note signs, and small accent pieces meant for a mantel, a nursery shelf, or a gift that says more than a card ever could.",
+    "heroImage": "/assets/images/collection-from-the-heart.svg",
+    "images": [
+      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Layered wooden heart wall décor in stained finish" },
+      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Small hand-cut wood hearts arranged on a shelf" },
+      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Rustic wooden heart sign with hand-lettered accent" },
+      { "src": "/assets/images/collection-from-the-heart.svg", "alt": "Wood heart ornament with burned edge detail" }
+    ]
+  },
+  {
+    "slug": "crafted-keepsakes",
+    "title": "Crafted Keepsakes",
+    "shortDescription": "Custom engraved gifts, made to hold a name, a date, or a memory.",
+    "description": "Personalized, engraved keepsakes built for milestones — a family name sign, a wedding date plaque, a memorial piece. Every order in this collection is one-of-one, engraved and finished by hand to fit exactly what the moment calls for.",
+    "heroImage": "/assets/images/collection-crafted-keepsakes.svg",
+    "images": [
+      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Engraved wooden family name sign" },
+      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Custom engraved keepsake box with lid detail" },
+      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Personalized wood plaque with engraved date" },
+      { "src": "/assets/images/collection-crafted-keepsakes.svg", "alt": "Hand-engraved memorial keepsake piece" }
+    ]
+  }
+]

@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+title: Contact
+description: Get in touch with Gifted Hands Creations by email, form, or social media.
+permalink: /contact/
+---
+<section class="section">
+  <div class="wrap">
+    <div class="section__heading">
+      <h1>Get in Touch</h1>
+      <p>Questions about a piece, a custom order, or just want to say hello? We'd love to hear from you.</p>
+    </div>
+
+    <div class="contact-methods">
+      <div>
+        <h2>Email</h2>
+        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </div>
+      <div>
+        <h2>Follow Along</h2>
+        <ul class="footer-links">
+          {% if site.social.facebook %}<li><a href="{{ site.social.facebook }}">Facebook</a></li>{% endif %}
+          {% if site.social.instagram %}<li><a href="{{ site.social.instagram }}">Instagram</a></li>{% endif %}
+          {% if site.social.etsy %}<li><a href="{{ site.social.etsy }}">Etsy</a></li>{% endif %}
+        </ul>
+      </div>
+    </div>
+
+    <h2>Send a Message</h2>
+    <!--
+      Placeholder form action — replace YOUR_FORM_ID with a real Formspree
+      endpoint (https://formspree.io) or swap this for a Cloudflare Pages
+      Function at /functions/contact.js. See README for details.
+    -->
+    <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" autocomplete="email" required>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+      <div>
+        <button class="btn" type="submit">Send Message</button>
+      </div>
+    </form>
+
+    <p>Prefer email? Just <a href="mailto:{{ site.email }}">click here to email us directly</a>.</p>
+  </div>
+</section>

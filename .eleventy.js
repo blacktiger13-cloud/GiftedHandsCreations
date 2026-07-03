@@ -1,0 +1,19 @@
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy({ "src/favicon.svg": "favicon.svg" });
+  eleventyConfig.addWatchTarget("src/assets/css");
+
+  eleventyConfig.addFilter("year", () => new Date().getFullYear());
+
+  return {
+    dir: {
+      input: "src",
+      output: "_site",
+      includes: "_includes",
+      data: "_data",
+    },
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    templateFormats: ["md", "njk", "html"],
+  };
+};

@@ -1,0 +1,18 @@
+{
+  "name": "Gifted Hands Creations",
+  "tagline": "Heartfelt Handiworks",
+  "description": "Veteran-owned, handmade woodcraft from Gifted Hands Creations — American flag art, wooden heart décor, and custom engraved keepsakes, made one piece at a time.",
+  "url": "https://giftedhandscreations.com",
+  "email": "hello@giftedhandscreations.com",
+  "social": {
+    "facebook": "https://www.facebook.com/giftedhandscreations",
+    "instagram": "https://www.instagram.com/giftedhandscreations",
+    "etsy": "https://www.etsy.com/shop/giftedhandscreations"
+  },
+  "badges": [
+    { "label": "Veteran Owned" },
+    { "label": "Hand Made in USA" },
+    { "label": "Supreme Quality" },
+    { "label": "Every Product is 1 of 1" }
+  ]
+}

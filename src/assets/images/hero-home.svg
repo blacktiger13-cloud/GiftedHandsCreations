@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d">
+  <title id="t">Placeholder hero photo</title>
+  <desc id="d">Photo coming soon — hand-crafted wood art from Gifted Hands Creations</desc>
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8a5a34"/>
+      <stop offset="100%" stop-color="#5c3a22"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#wood)"/>
+  <rect x="24" y="24" width="752" height="552" fill="none" stroke="#b8862f" stroke-width="4"/>
+  <text x="400" y="290" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#faf5ea">Gifted Hands Creations</text>
+  <text x="400" y="330" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="20" fill="#f0e6d2">Photo coming soon</text>
+</svg>

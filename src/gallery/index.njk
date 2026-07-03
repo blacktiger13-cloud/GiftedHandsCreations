@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Gallery
+description: Browse handmade wood art from Gifted Hands Creations — American flag art, wooden heart décor, and custom engraved keepsakes.
+permalink: /gallery/
+---
+<section class="section">
+  <div class="wrap">
+    <div class="section__heading">
+      <h1>Gallery</h1>
+      <p>Three collections, all made by hand. These are portfolio pieces — reach out through the <a href="/contact/">contact page</a> if something catches your eye.</p>
+    </div>
+    <div class="card-grid">
+      {% for item in portfolio %}
+      <a class="card" href="/gallery/{{ item.slug }}/">
+        <img src="{{ item.heroImage }}" alt="" loading="lazy" width="800" height="600">
+        <div class="card__body">
+          <h2 class="card__title">{{ item.title }}</h2>
+          <p class="card__desc">{{ item.shortDescription }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
