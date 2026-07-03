@@ -26,7 +26,7 @@ src/
 ├── _includes/
 │   ├── layouts/base.njk         # shared HTML shell (head, header, footer)
 │   └── partials/
-│       ├── header.njk, footer.njk, logo-mark.njk
+│       ├── header.njk, footer.njk
 │       ├── contact-form.njk     # shared {% macro contactForm(submitLabel) %}
 │       └── collection-detail.njk # shared {% macro collectionDetail(slug) %} — heading + image grid + prev/next pager
 ├── _data/
@@ -35,7 +35,7 @@ src/
 ├── assets/
 │   ├── css/style.css
 │   ├── js/nav.js                 # mobile nav toggle
-│   └── images/                   # placeholder SVGs — swap for real photos
+│   └── images/                   # real logo/badges/photos are in; gallery thumbnails are still placeholder SVGs
 ├── index.njk                     # Home
 ├── gallery/
 │   ├── index.njk                 # Gallery landing (3 large linked photos, no text)
@@ -60,20 +60,23 @@ src/
 
 If you add a new macro that reads global data (`site`, `portfolio`, etc.), import it with `{% from "partials/foo.njk" import bar with context %}` — the `with context` is required, or the macro renders empty because it can't see the data cascade. `contact-form.njk`'s macro doesn't touch globals, so it's imported without `with context`.
 
-### Swapping in real photos
+### Images: what's real vs. placeholder
 
-All images are currently placeholder SVGs (`src/assets/images/*.svg`) so the site builds and reads correctly with no real photos yet. To swap them in:
+The logo (`ghc_logo-web.png`), all four trust badges, the owner's signature, the hero background, and the About/Contact photos are the real uploaded assets — resized and (where needed) background-removed from the originals, which are also kept in the repo unmodified (`ghc_logo.jpg`, `Signature2.png`, `made_in_usa2.png`, `supremequality.png`, `unique2.png`, `veteran owned4.png`, `homePage_bg.png`, `about_us.png`, `contact_us.png`) in case you ever need to re-derive a different crop or size.
 
-1. Export real photos as **WebP** (with a JPEG fallback if you want maximum browser support) and drop them in `src/assets/images/`.
-2. Update the `src`/`alt` fields in `src/_data/portfolio.json`, the hero background in `src/index.njk`, and the `<img>` tags in `src/about.njk` / `src/contact.njk` to point at the new files.
-3. Keep `loading="lazy"` on below-the-fold images (already set on gallery/card images) and `loading="eager"` only on the hero image.
-4. For the WebP-with-fallback pattern, use `<picture>`:
+The **gallery collection thumbnails and detail-page grids** (Stars & Stripes, From the Heart, Crafted Keepsakes) are still placeholder SVGs labeled "Photo coming soon" — swap those in the same way:
+
+1. Export real photos as **WebP** (with a JPEG fallback for older browsers) and drop them in `src/assets/images/`.
+2. Update the `src`/`alt` fields for the relevant collection in `src/_data/portfolio.json`.
+3. Keep `loading="lazy"` on below-the-fold images.
+4. For the WebP-with-fallback pattern (already used for the hero/about/contact photos), use `<picture>`:
    ```html
    <picture>
      <source srcset="/assets/images/flag-01.webp" type="image/webp">
      <img src="/assets/images/flag-01.jpg" alt="..." loading="lazy" width="800" height="600">
    </picture>
    ```
+   The gallery grid currently renders plain `<img>` tags from `portfolio.json`, so switching a collection to `<picture>` means editing `collection-detail.njk` (and the home/gallery-landing card markup) rather than the JSON alone — or just ship `.jpg`/`.png` there and skip the WebP variant if that's simpler.
 
 ### Contact form
 
