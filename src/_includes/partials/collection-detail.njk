@@ -7,7 +7,16 @@
 
     <div class="gallery-grid">
       {% for img in item.images %}
-      <figure><img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" width="800" height="800"></figure>
+      <figure>
+        {% if img.webp %}
+        <picture>
+          <source srcset="{{ img.webp }}" type="image/webp">
+          <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" width="800" height="800">
+        </picture>
+        {% else %}
+        <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" width="800" height="800">
+        {% endif %}
+      </figure>
       {% endfor %}
     </div>
 

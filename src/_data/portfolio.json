@@ -12,15 +12,24 @@
     "galleryPageImageWebp": "/assets/images/gallery-page-stars-stripes.webp",
     "galleryPageImageAlt": "Three hand-finished wooden American flags arranged together, including a thin-line tribute flag",
     "images": [
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Assortment of hand-finished wooden American flags" },
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a United States Army seal" },
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a Signal Corps insignia" },
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with crossed signal flags" },
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag with a full field of routed stars" },
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a United States Army seal and rank insignia" },
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a teach, inspire, care apple design" },
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a combat medic badge" },
-      { "src": "/assets/images/collection-stars-and-stripes.svg", "alt": "Wooden flag engraved with a warrant officer eagle insignia" }
+      { "src": "/assets/images/stars-stripes-01.jpg", "webp": "/assets/images/stars-stripes-01.webp", "alt": "A group of wooden American flags, including two nurse corps tribute flags and two mini flags" },
+      { "src": "/assets/images/stars-stripes-02.jpg", "webp": "/assets/images/stars-stripes-02.webp", "alt": "A wooden flag engraved with a United States Army seal and sergeant major rank, viewed at an angle" },
+      { "src": "/assets/images/stars-stripes-03.jpg", "webp": "/assets/images/stars-stripes-03.webp", "alt": "A weathered wooden American flag displayed on a mantel" },
+      { "src": "/assets/images/stars-stripes-04.jpg", "webp": "/assets/images/stars-stripes-04.webp", "alt": "A wooden flag engraved with a Signal Corps insignia and crossed signal flags" },
+      { "src": "/assets/images/stars-stripes-05.jpg", "webp": "/assets/images/stars-stripes-05.webp", "alt": "Close-up of an engraved Signal Corps crossed-flags and torch emblem" },
+      { "src": "/assets/images/stars-stripes-06.jpg", "webp": "/assets/images/stars-stripes-06.webp", "alt": "Close-up of a full field of hand-routed wooden stars" },
+      { "src": "/assets/images/stars-stripes-07.jpg", "webp": "/assets/images/stars-stripes-07.webp", "alt": "Close-up of an engraved United States Army seal and sergeant major rank insignia" },
+      { "src": "/assets/images/stars-stripes-08.jpg", "webp": "/assets/images/stars-stripes-08.webp", "alt": "A wooden flag engraved with a \"Teach, Inspire, Care\" apple design, thanking a teacher for 20 years of service" },
+      { "src": "/assets/images/stars-stripes-09.jpg", "webp": "/assets/images/stars-stripes-09.webp", "alt": "A wooden flag engraved with a Combat Medic badge" },
+      { "src": "/assets/images/stars-stripes-10.jpg", "webp": "/assets/images/stars-stripes-10.webp", "alt": "A wooden flag engraved with a warrant officer eagle insignia" },
+      { "src": "/assets/images/stars-stripes-11.jpg", "webp": "/assets/images/stars-stripes-11.webp", "alt": "A custom flag split between the American flag and the Canadian flag, commemorating a 2022 Saint Luke's validation event" },
+      { "src": "/assets/images/stars-stripes-12.jpg", "webp": "/assets/images/stars-stripes-12.webp", "alt": "A wooden flag engraved with a map of southeastern states, thanking a leader for their leadership and service" },
+      { "src": "/assets/images/stars-stripes-13.jpg", "webp": "/assets/images/stars-stripes-13.webp", "alt": "A weathered wooden American flag with a distressed, burned finish" },
+      { "src": "/assets/images/stars-stripes-14.jpg", "webp": "/assets/images/stars-stripes-14.webp", "alt": "A wooden American flag in classic red, white, and blue stain" },
+      { "src": "/assets/images/stars-stripes-15.jpg", "webp": "/assets/images/stars-stripes-15.webp", "alt": "Three hand-finished wooden American flags arranged together, including a thin-line tribute flag" },
+      { "src": "/assets/images/stars-stripes-16.jpg", "webp": "/assets/images/stars-stripes-16.webp", "alt": "A wooden American flag built as a display shelf, holding a collection of shot glasses" },
+      { "src": "/assets/images/stars-stripes-17.jpg", "webp": "/assets/images/stars-stripes-17.webp", "alt": "A weathered wooden American flag viewed at an angle, showing its raised wood-grain texture" },
+      { "src": "/assets/images/stars-stripes-18.jpg", "webp": "/assets/images/stars-stripes-18.webp", "alt": "Close-up of a weathered wooden American flag's stars and stripes" }
     ]
   },
   {
