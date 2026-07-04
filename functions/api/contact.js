@@ -39,7 +39,7 @@ export async function onRequestPost(context) {
     return Response.redirect(new URL("/contact/?error=1", request.url), 303);
   }
 
-  const toEmail = env.CONTACT_TO_EMAIL || "hello@giftedhandscreations.com";
+  const toEmail = env.CONTACT_TO_EMAIL || "slenoah.jackson@gmail.com";
   const fromEmail = env.CONTACT_FROM_EMAIL || "Gifted Hands Creations Website <website@giftedhandscreations.com>";
 
   const resendResponse = await fetch("https://api.resend.com/emails", {

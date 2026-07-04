@@ -89,7 +89,7 @@ The function validates the submission, rejects obvious spam via a honeypot field
 1. Create a free Resend account at [resend.com](https://resend.com) (free tier: 100 emails/day, 3,000/month — plenty for a contact form).
 2. Add and verify `giftedhandscreations.com` as a sending domain in Resend. It will give you a handful of DNS records (SPF/DKIM) to add — since the domain's nameservers are already on Cloudflare, add them under **DNS** in the Cloudflare dashboard for this zone.
 3. Create an API key in Resend.
-4. In the Cloudflare Pages project: **Settings → Environment variables** → add `RESEND_API_KEY` as an **encrypted** variable with that key. Optionally also set `CONTACT_TO_EMAIL` (defaults to `hello@giftedhandscreations.com`) and `CONTACT_FROM_EMAIL` (defaults to `Gifted Hands Creations Website <website@giftedhandscreations.com>` — the address part must be on the domain you verified in step 2).
+4. In the Cloudflare Pages project: **Settings → Environment variables** → add `RESEND_API_KEY` as an **encrypted** variable with that key. Optionally also set `CONTACT_TO_EMAIL` (defaults to `slenoah.jackson@gmail.com`) and `CONTACT_FROM_EMAIL` (defaults to `Gifted Hands Creations Website <website@giftedhandscreations.com>` — the address part must be on the domain you verified in step 2).
 5. Redeploy (or trigger a new deploy) so the Function picks up the new environment variables.
 
 Until step 2–4 are done, form submissions will fail gracefully (visitor sees the error banner with a mailto: fallback) rather than silently disappearing.
