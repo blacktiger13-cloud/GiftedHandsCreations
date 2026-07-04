@@ -80,10 +80,21 @@ The **gallery collection thumbnails and detail-page grids** (Stars & Stripes, Fr
 
 ### Contact form
 
-The contact form (`src/_includes/partials/contact-form.njk`, used on both `/about/` and `/contact/`) currently posts to a placeholder [Formspree](https://formspree.io) endpoint (`YOUR_FORM_ID`). To make it live:
+The contact form (`src/_includes/partials/contact-form.njk`, used on both `/about/` and `/contact/`) posts to `/api/contact`, handled by the Cloudflare Pages Function at `functions/api/contact.js`. Cloudflare Pages automatically deploys anything under `/functions` at the repo root alongside the static build — no `wrangler.toml` needed for this.
 
-- **Option A — Formspree (simplest):** create a free Formspree form and replace `YOUR_FORM_ID` in the form's `action` attribute.
-- **Option B — Cloudflare Pages Functions:** once ready to go serverless-free-tier, add a `functions/contact.js` file at the repo root (outside `src/`) implementing a `POST` handler — Cloudflare Pages automatically deploys anything in `/functions` alongside the static build. This wasn't set up yet since it adds moving parts (email delivery, spam handling) beyond what's needed for a first launch; a `wrangler.toml` isn't required for the Git-integration deploy flow described below, only if you add Pages Functions with more advanced bindings later.
+The function validates the submission, rejects obvious spam via a honeypot field (`website` — hidden from real visitors with CSS, but bots tend to fill in every field they find), and sends the message as an email through [Resend](https://resend.com). On success it redirects to `/thank-you/`; on failure (missing fields, spam, or a Resend API error) it redirects back to `/contact/?error=1`, which the page detects via `src/assets/js/contact-status.js` to reveal an inline error banner.
+
+**One-time setup before the form will actually deliver email:**
+
+1. Create a free Resend account at [resend.com](https://resend.com) (free tier: 100 emails/day, 3,000/month — plenty for a contact form).
+2. Add and verify `giftedhandscreations.com` as a sending domain in Resend. It will give you a handful of DNS records (SPF/DKIM) to add — since the domain's nameservers are already on Cloudflare, add them under **DNS** in the Cloudflare dashboard for this zone.
+3. Create an API key in Resend.
+4. In the Cloudflare Pages project: **Settings → Environment variables** → add `RESEND_API_KEY` as an **encrypted** variable with that key. Optionally also set `CONTACT_TO_EMAIL` (defaults to `hello@giftedhandscreations.com`) and `CONTACT_FROM_EMAIL` (defaults to `Gifted Hands Creations Website <website@giftedhandscreations.com>` — the address part must be on the domain you verified in step 2).
+5. Redeploy (or trigger a new deploy) so the Function picks up the new environment variables.
+
+Until step 2–4 are done, form submissions will fail gracefully (visitor sees the error banner with a mailto: fallback) rather than silently disappearing.
+
+MailChannels, the email service Cloudflare Workers/Pages used to integrate with for free, was deprecated — Resend is the current recommended replacement and is what this Function uses.
 
 ## Deployment (GitHub + Cloudflare Pages)
 

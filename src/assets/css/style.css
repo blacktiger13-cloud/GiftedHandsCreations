@@ -806,6 +806,29 @@ h1, h2, h3, h4 {
   font-size: 0.85em;
 }
 
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-error {
+  max-width: 34rem;
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-red);
+  border-radius: var(--radius);
+  background: var(--color-white);
+  color: var(--color-red);
+}
+
+.form-error a {
+  color: var(--color-red);
+  text-decoration: underline;
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer {
