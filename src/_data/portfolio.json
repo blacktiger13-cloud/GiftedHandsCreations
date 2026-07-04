@@ -209,31 +209,98 @@
     "galleryPageImage": "/assets/images/gallery-page-keepsakes.jpg",
     "galleryPageImageWebp": "/assets/images/gallery-page-keepsakes.webp",
     "galleryPageImageAlt": "A striped wooden cutting board engraved with a sleeping cat and star design",
-    "imageAspectRatio": "4 / 3",
+    "imageAspectRatio": "1 / 1",
     "images": [
       {
-        "src": "/assets/images/collection-crafted-keepsakes.svg",
-        "alt": "Engraved wooden serving tray with inlaid heart"
+        "src": "/assets/images/crafted-keepsakes-01.jpg",
+        "webp": "/assets/images/crafted-keepsakes-01.webp",
+        "alt": "A walnut serving tray with cutout handles and an inlaid heart in the center",
+        "w": 1200,
+        "h": 900
       },
       {
-        "src": "/assets/images/collection-crafted-keepsakes.svg",
-        "alt": "Striped wood cutting board"
+        "src": "/assets/images/crafted-keepsakes-02.jpg",
+        "webp": "/assets/images/crafted-keepsakes-02.webp",
+        "alt": "A custom coaster engraved with the Superman shield logo",
+        "w": 1200,
+        "h": 1200
       },
       {
-        "src": "/assets/images/collection-crafted-keepsakes.svg",
-        "alt": "Engraved kitchen sign, the kitchen is the heart of the home"
+        "src": "/assets/images/crafted-keepsakes-03.jpg",
+        "webp": "/assets/images/crafted-keepsakes-03.webp",
+        "alt": "Two stacks of striped wood coasters made from purple heart, zebrawood, and walnut",
+        "w": 1200,
+        "h": 1200
       },
       {
-        "src": "/assets/images/collection-crafted-keepsakes.svg",
-        "alt": "Custom wood puzzle keepsake"
+        "src": "/assets/images/crafted-keepsakes-04.jpg",
+        "webp": "/assets/images/crafted-keepsakes-04.webp",
+        "alt": "A coaster engraved with a Sergeant Major military rank insignia",
+        "w": 1200,
+        "h": 1200
       },
       {
-        "src": "/assets/images/collection-crafted-keepsakes.svg",
-        "alt": "Engraved grilling sign with crossed utensils"
+        "src": "/assets/images/crafted-keepsakes-05.jpg",
+        "webp": "/assets/images/crafted-keepsakes-05.webp",
+        "alt": "A striped wooden cutting board engraved with a sleeping cat and star design",
+        "w": 1200,
+        "h": 799
       },
       {
-        "src": "/assets/images/collection-crafted-keepsakes.svg",
-        "alt": "Mosaic wood inlay panel"
+        "src": "/assets/images/crafted-keepsakes-06.jpg",
+        "webp": "/assets/images/crafted-keepsakes-06.webp",
+        "alt": "A striped wooden cutting board on a kitchen counter",
+        "w": 434,
+        "h": 436
+      },
+      {
+        "src": "/assets/images/crafted-keepsakes-07.jpg",
+        "webp": "/assets/images/crafted-keepsakes-07.webp",
+        "alt": "A wooden puzzle keepsake with hand-cut interlocking pieces",
+        "w": 435,
+        "h": 435
+      },
+      {
+        "src": "/assets/images/crafted-keepsakes-08.jpg",
+        "webp": "/assets/images/crafted-keepsakes-08.webp",
+        "alt": "A wooden grilling sign engraved with crossed grilling tools over a flame",
+        "w": 434,
+        "h": 435
+      },
+      {
+        "src": "/assets/images/crafted-keepsakes-09.jpg",
+        "webp": "/assets/images/crafted-keepsakes-09.webp",
+        "alt": "A mosaic wood panel made from small tiles, some painted with stars and stripes",
+        "w": 435,
+        "h": 435
+      },
+      {
+        "src": "/assets/images/crafted-keepsakes-10.jpg",
+        "webp": "/assets/images/crafted-keepsakes-10.webp",
+        "alt": "A custom engraved wood keepsake piece",
+        "w": 434,
+        "h": 436
+      },
+      {
+        "src": "/assets/images/crafted-keepsakes-11.jpg",
+        "webp": "/assets/images/crafted-keepsakes-11.webp",
+        "alt": "A custom engraved wood coaster",
+        "w": 1200,
+        "h": 1200
+      },
+      {
+        "src": "/assets/images/crafted-keepsakes-12.jpg",
+        "webp": "/assets/images/crafted-keepsakes-12.webp",
+        "alt": "A custom engraved wood keepsake piece",
+        "w": 588,
+        "h": 441
+      },
+      {
+        "src": "/assets/images/crafted-keepsakes-13.jpg",
+        "webp": "/assets/images/crafted-keepsakes-13.webp",
+        "alt": "A custom engraved wood coaster",
+        "w": 1200,
+        "h": 1200
       }
     ]
   }
