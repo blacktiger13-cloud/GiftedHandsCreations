@@ -116,20 +116,22 @@ h1, h2, h3, h4 {
   text-decoration: none;
   color: var(--color-ink);
   order: 2;
+  min-width: 0;
 }
 
 .brand__mark {
   display: block;
   height: 3.75rem;
   width: auto;
+  flex-shrink: 0;
 }
 
 .brand__name {
   font-family: var(--font-heading);
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: clamp(0.9rem, 4.2vw, 1.3rem);
   color: var(--color-ink);
-  white-space: nowrap;
+  line-height: 1.15;
 }
 
 .site-header__actions {
@@ -137,6 +139,7 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 0.75rem;
   order: 3;
+  flex-shrink: 0;
 }
 
 .site-header .site-header__cta {
