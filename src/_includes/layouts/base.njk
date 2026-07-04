@@ -26,6 +26,21 @@
     {{ content | safe }}
   </main>
   {% include "partials/footer.njk" %}
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox__close" aria-label="Close">&times;</button>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Previous image">&lsaquo;</button>
+    <div class="lightbox__stage">
+      <img class="lightbox__img" src="" alt="">
+      <p class="lightbox__caption"></p>
+    </div>
+    <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Next image">&rsaquo;</button>
+  </div>
+
+  <button type="button" class="back-to-top" aria-label="Back to top" hidden>&uarr;</button>
+
   <script src="/assets/js/nav.js" defer></script>
+  <script src="/assets/js/lightbox.js" defer></script>
+  <script src="/assets/js/back-to-top.js" defer></script>
 </body>
 </html>

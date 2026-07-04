@@ -25,19 +25,26 @@
 
     <h1 class="page-heading">{{ item.navTitle or item.title }}</h1>
 
-    <div class="gallery-grid" style="--tile-ratio: {{ item.imageAspectRatio or '4 / 3' }};">
+    <div class="gallery-grid" style="--tile-ratio: {{ item.imageAspectRatio or '4 / 3' }};" data-lightbox-group="{{ item.slug }}">
       {% for img in item.images %}
       <figure>
-        {% if img.webp %}
-        <picture>
-          <source srcset="{{ img.webp }}" type="image/webp">
+        <a class="gallery-grid__trigger" href="{{ img.src }}" data-lightbox-alt="{{ img.alt }}">
+          {% if img.webp %}
+          <picture>
+            <source srcset="{{ img.webp }}" type="image/webp">
+            <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" width="{{ img.w or 800 }}" height="{{ img.h or 800 }}">
+          </picture>
+          {% else %}
           <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" width="{{ img.w or 800 }}" height="{{ img.h or 800 }}">
-        </picture>
-        {% else %}
-        <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" width="{{ img.w or 800 }}" height="{{ img.h or 800 }}">
-        {% endif %}
+          {% endif %}
+        </a>
       </figure>
       {% endfor %}
+    </div>
+
+    <div class="collection-cta">
+      <p>Love what you see? Every piece here was custom built for someone — yours can be too.</p>
+      <a class="btn btn--pill" href="/contact/">Start Your Custom Order</a>
     </div>
 
     <div class="collection-pager">

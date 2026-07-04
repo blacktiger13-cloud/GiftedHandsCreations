@@ -8,6 +8,7 @@
   --color-cream: #f7f2e6;
   --color-cream-dark: #e9e0cc;
   --color-gold: #b8862f;
+  --color-gold-deep: #7a5419;
   --color-red: #7a2b2b;
   --color-ink: #3a2f22;
   --color-ink-muted: #6b5f4e;
@@ -199,7 +200,7 @@ h1, h2, h3, h4 {
 .primary-nav a:hover,
 .primary-nav a:focus,
 .primary-nav a[aria-current="page"] {
-  color: var(--color-gold);
+  color: var(--color-gold-deep);
   text-decoration: underline;
 }
 
@@ -471,7 +472,7 @@ h1, h2, h3, h4 {
 
 .collection-card h2 a:hover,
 .collection-card h3 a:hover {
-  color: var(--color-gold);
+  color: var(--color-gold-deep);
 }
 
 .collection-card p {
@@ -501,10 +502,36 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 
+.gallery-grid__trigger {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+}
+
 .gallery-grid figure img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.gallery-grid__trigger:hover img,
+.gallery-grid__trigger:focus img {
+  transform: scale(1.03);
+}
+
+/* ---------- Custom-order CTA (collection sub-pages) ---------- */
+
+.collection-cta {
+  text-align: center;
+  max-width: 34rem;
+  margin: 0 auto 2.5rem;
+}
+
+.collection-cta p {
+  margin-bottom: 1rem;
+  color: var(--color-ink-muted);
 }
 
 /* ---------- Collection pager (prev / next) ---------- */
@@ -527,11 +554,23 @@ h1, h2, h3, h4 {
 
 .collection-pager__link:hover,
 .collection-pager__link:focus {
-  color: var(--color-gold);
+  color: var(--color-gold-deep);
 }
 
 .collection-pager__link--next {
   margin-left: auto;
+}
+
+@media (max-width: 479px) {
+  .collection-pager {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .collection-pager__link--next {
+    margin-left: 0;
+  }
 }
 
 .collection-pager--top {
@@ -549,7 +588,7 @@ h1, h2, h3, h4 {
 
 .collection-pager--top .collection-pager__link:hover,
 .collection-pager--top .collection-pager__link:focus {
-  color: var(--color-gold);
+  color: var(--color-gold-deep);
 }
 
 /* ---------- Showcase grid (gallery landing) ---------- */
@@ -792,4 +831,132 @@ h1, h2, h3, h4 {
   font-size: 0.85rem;
   color: var(--color-cream-dark);
   text-align: center;
+}
+
+/* ---------- Lightbox ---------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(20, 14, 10, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox__stage {
+  max-width: min(92vw, 1100px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  display: block;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox__caption {
+  color: var(--color-cream);
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 60ch;
+  margin: 0;
+  padding-inline: 1rem;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  color: var(--color-cream);
+  font-size: 2.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.6rem;
+}
+
+.lightbox__close:hover,
+.lightbox__close:focus {
+  color: var(--color-gold);
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--color-cream);
+  font-size: 2rem;
+  line-height: 1;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox__nav:hover,
+.lightbox__nav:focus {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--color-gold);
+}
+
+.lightbox__nav--prev {
+  left: 0.75rem;
+}
+
+.lightbox__nav--next {
+  right: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox__nav {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* ---------- Back to top ---------- */
+
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 150;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-brown-deep);
+  color: var(--color-cream);
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.back-to-top[hidden] {
+  display: none;
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+  background: var(--color-ink);
 }
