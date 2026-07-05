@@ -1,6 +1,6 @@
 # Gifted Hands Creations
 
-Static, informational/portfolio site for **Gifted Hands Creations** — a veteran-owned, handmade woodcraft shop (American flag art, wooden heart décor, custom engraved keepsakes). Built with [Eleventy (11ty)](https://www.11ty.dev/), plain CSS, and no backend.
+Static, informational/portfolio site for **Gifted Hands Creations** — a veteran-owned, handmade woodcraft shop (American flag art, wooden heart décor, custom engraved keepsakes). Built with [Eleventy (11ty)](https://www.11ty.dev/) and plain CSS; the only server-side code is a single small function that relays the contact form.
 
 This is **not** a storefront — there's no cart, checkout, or pricing. It's a fast, free-to-host home for the brand's story and gallery, with a way for people to reach out.
 
@@ -8,8 +8,9 @@ This is **not** a storefront — there's no cart, checkout, or pricing. It's a f
 
 - **Eleventy (11ty)** — static site generator, output to `_site/`
 - **Plain CSS** with custom properties — mobile-first, no framework
+- **Plain JS**, one small self-contained file per feature (`src/assets/js/`) — no framework, no build step, no bundler. Each script no-ops if the element it targets isn't on the page, so they're safe to load on every page.
 - Content lives in **Nunjucks pages** (`src/*.njk`) and **JSON data** (`src/_data/`), so it's easy to hand-edit or later wire up a headless CMS (e.g. Decap CMS). Pages use `.njk` rather than `.md` because they're structural HTML/template layouts, not prose — Eleventy's Markdown pipeline mangles indented HTML blocks.
-- **Cloudflare Pages** for free hosting + automatic deploys from GitHub
+- **Cloudflare Pages** for free hosting + automatic deploys from GitHub, plus one small **Cloudflare Pages Function** (`functions/api/contact.js`) — the only server-side code in the project, used solely to relay the contact form to an email API. Everything else is static.
 
 ## Local development
 
@@ -22,61 +23,68 @@ npm run build     # builds the production site into _site/
 ## Project structure
 
 ```
+functions/
+└── api/contact.js                # Cloudflare Pages Function — POST /api/contact, emails via Resend
+
 src/
 ├── _includes/
-│   ├── layouts/base.njk         # shared HTML shell (head, header, footer)
+│   ├── layouts/base.njk         # shared HTML shell (head, header, footer, lightbox markup, back-to-top button, script tags)
 │   └── partials/
 │       ├── header.njk, footer.njk
-│       ├── contact-form.njk     # shared {% macro contactForm(submitLabel) %}
-│       └── collection-detail.njk # shared {% macro collectionDetail(slug) %} — heading + image grid + prev/next pager
+│       ├── contact-form.njk     # shared {% macro contactForm(submitLabel) %} — posts to /api/contact, includes honeypot + error banner
+│       └── collection-detail.njk # shared {% macro collectionDetail(slug) %} — breadcrumb + BreadcrumbList JSON-LD, prev/next pager (top + bottom), heading, lightbox-enabled image grid, custom-order CTA
 ├── _data/
 │   ├── site.json                 # site name, tagline, hero copy, email, social links, trust badges
-│   └── portfolio.json            # the 3 gallery collections + their images
+│   └── portfolio.json            # the 3 gallery collections + their images (all real photos, with real width/height per image)
 ├── assets/
 │   ├── css/style.css
-│   ├── js/nav.js                 # mobile nav toggle
-│   └── images/                   # real logo/badges/photos are in; gallery thumbnails are still placeholder SVGs
+│   ├── js/
+│   │   ├── nav.js                # mobile nav toggle
+│   │   ├── lightbox.js           # gallery image lightbox (keyboard nav, touch swipe, focus management)
+│   │   ├── back-to-top.js        # back-to-top button, shows after scrolling past a threshold
+│   │   └── contact-status.js     # reveals the contact form's error banner when redirected with ?error=1
+│   └── images/                   # all real photos/logo/badges; a couple of unused original source files are also kept (see below)
 ├── index.njk                     # Home
 ├── gallery/
-│   ├── index.njk                 # Gallery landing (3 large linked photos, no text)
+│   ├── index.njk                 # Gallery landing (3 large linked photos + h1, no other text)
 │   ├── stars-and-stripes.njk     # thin wrapper: collectionDetail("stars-and-stripes")
 │   ├── from-the-heart.njk
 │   └── crafted-keepsakes.njk
 ├── about.njk                     # bio/story + an embedded "Contact us" section
 ├── contact.njk                   # full Contact Us page
-├── sitemap.njk                   # generates /sitemap.xml at build
+├── thank-you.njk                 # shown after a successful contact form submission
+├── 404.njk                       # custom not-found page (Cloudflare Pages serves this automatically)
+├── sitemap.njk                   # generates /sitemap.xml at build (404/thank-you excluded)
 └── robots.txt.njk                # generates /robots.txt at build
 ```
 
 ## Editing content
 
 - **Site-wide info** (name, tagline, hero heading/copy/CTA, email, social links, trust badges + descriptions): `src/_data/site.json`
-- **Gallery collections & images**: `src/_data/portfolio.json`. Each collection has a `slug`, `title` (and optional `navTitle` used for on-page headings and the prev/next pager, where it differs from the footer/nav `title`), descriptions, and an `images` array (`src` + `alt` text). The three gallery detail pages pull from this file by `slug` via the shared `collectionDetail` macro — add/reorder photos there without touching any template. The prev/next pager order follows the array order in this file.
+- **Gallery collections & images**: `src/_data/portfolio.json`. Each collection has a `slug`, `title` (and optional `navTitle` used for on-page headings, the prev/next pager, and breadcrumbs, where it differs from the footer/nav `title`), descriptions, `heroImage`/`heroImageWebp`/`heroImageAlt` (home page cards), `galleryPageImage`/`galleryPageImageWebp`/`galleryPageImageAlt` (gallery landing page), `imageAspectRatio` (controls the uniform tile shape on that collection's grid, e.g. `"16 / 9"` or `"1 / 1"`), and an `images` array (`src`, `webp`, `alt`, `w`, `h` — real pixel dimensions, used to prevent layout shift). The three gallery detail pages pull from this file by `slug` via the shared `collectionDetail` macro — add/reorder photos there without touching any template. The prev/next pager and lightbox order follows the array order in this file.
 - **Page copy** (Home intro, About story/signature, Contact blurb): edit the HTML/Nunjucks directly in `src/index.njk`, `src/about.njk`, `src/contact.njk`.
-- **Contact form fields**: both the About page's embedded form and the standalone Contact page render `{{ contactForm(submitLabel) }}` from `src/_includes/partials/contact-form.njk` — edit the fields once, both places update.
-- **Per-page SEO**: each page's front matter (`title`, `description`) drives the `<title>` and meta/Open Graph tags in `src/_includes/layouts/base.njk`.
+- **Contact form fields**: both the About page's embedded form and the standalone Contact page render `{{ contactForm(submitLabel) }}` from `src/_includes/partials/contact-form.njk` — edit the fields once, both places update. See "Contact form" below for how submissions are delivered.
+- **Per-page SEO**: each page's front matter (`title`, `description`, optional `image`) drives the `<title>` and meta/Open Graph tags in `src/_includes/layouts/base.njk`. Set `image` (a path like `/assets/images/about-workbench.jpg`) on any page that should show its own photo when shared on social media instead of the site-wide default (`hero-home.jpg`) — every current page already does this.
+- **New pages that shouldn't appear in the sitemap or nav** (like `404.njk`/`thank-you.njk`): add `eleventyExcludeFromCollections: true` to the front matter, the same way `sitemap.njk` and `robots.txt.njk` already do.
 
 ### A note on Nunjucks macro imports
 
-If you add a new macro that reads global data (`site`, `portfolio`, etc.), import it with `{% from "partials/foo.njk" import bar with context %}` — the `with context` is required, or the macro renders empty because it can't see the data cascade. `contact-form.njk`'s macro doesn't touch globals, so it's imported without `with context`.
+If a macro reads global data (`site`, `portfolio`, etc.), import it with `{% from "partials/foo.njk" import bar with context %}` — the `with context` is required, or the macro silently renders empty (or missing values) because it can't see the data cascade. Both `contactForm` and `collectionDetail` read globals now, so every import site uses `with context`. This bit twice during development — once for `collectionDetail`, once when an error-banner `{{ site.email }}` was added to `contactForm` — so if a macro's output goes unexpectedly blank, check this first.
 
-### Images: what's real vs. placeholder
+### Images
 
-The logo (`ghc_logo-web.png`), all four trust badges, the owner's signature, the hero background, and the About/Contact photos are the real uploaded assets — resized and (where needed) background-removed from the originals, which are also kept in the repo unmodified (`ghc_logo.jpg`, `Signature2.png`, `made_in_usa2.png`, `supremequality.png`, `unique2.png`, `veteran owned4.png`, `homePage_bg.png`, `about_us.png`, `contact_us.png`) in case you ever need to re-derive a different crop or size.
+`src/assets/images/` holds the real, in-use photos for every page — hero, about, contact, all three gallery collections (their card thumbnails, gallery-landing photos, and full detail-page grids), badges, logo, and signature. Most have a matching `.webp` alongside the `.jpg`/`.png` for the `<picture>` fallback pattern used throughout:
 
-The **gallery collection thumbnails and detail-page grids** (Stars & Stripes, From the Heart, Crafted Keepsakes) are still placeholder SVGs labeled "Photo coming soon" — swap those in the same way:
+```html
+<picture>
+  <source srcset="/assets/images/flag-01.webp" type="image/webp">
+  <img src="/assets/images/flag-01.jpg" alt="..." loading="lazy" width="800" height="600">
+</picture>
+```
 
-1. Export real photos as **WebP** (with a JPEG fallback for older browsers) and drop them in `src/assets/images/`.
-2. Update the `src`/`alt` fields for the relevant collection in `src/_data/portfolio.json`.
-3. Keep `loading="lazy"` on below-the-fold images.
-4. For the WebP-with-fallback pattern (already used for the hero/about/contact photos), use `<picture>`:
-   ```html
-   <picture>
-     <source srcset="/assets/images/flag-01.webp" type="image/webp">
-     <img src="/assets/images/flag-01.jpg" alt="..." loading="lazy" width="800" height="600">
-   </picture>
-   ```
-   The gallery grid currently renders plain `<img>` tags from `portfolio.json`, so switching a collection to `<picture>` means editing `collection-detail.njk` (and the home/gallery-landing card markup) rather than the JSON alone — or just ship `.jpg`/`.png` there and skip the WebP variant if that's simpler.
+A handful of original, unprocessed source files are also kept in the folder in case a different crop/size is ever needed later (e.g. `ghc_logo.jpg`, `Signature2.png`, `made_in_usa2.png`, `supremequality.png`, `unique2.png`, `veteran owned4.png`, `homePage_bg.png`, `about_us.png`, `contact_us.png`, and the per-collection upload folders like `StarsandStripes/`, `hearts/`, `craftedkeepsakes/`) — these aren't referenced by any template, so they're safe to ignore or delete if the repo ever needs tidying.
+
+To add a photo to an existing collection: export WebP + JPEG, drop both in `src/assets/images/`, then add an entry to that collection's `images` array in `portfolio.json` with real `w`/`h` dimensions and descriptive `alt` text. It'll automatically pick up the lightbox and the collection's tile aspect ratio — no template changes needed.
 
 ### Contact form
 
@@ -113,7 +121,9 @@ The `CNAME` file at the repo root records the intended custom domain for referen
 
 ## Non-functional notes
 
-- Semantic HTML throughout; every image has descriptive `alt` text (empty `alt=""` only on purely decorative card thumbnails that repeat a caption already visible as a heading).
-- Per-page `<title>`, meta description, and Open Graph tags via front matter (see `base.njk`).
-- `sitemap.xml` and `robots.txt` are generated at build time from `src/sitemap.njk` and `src/robots.txt.njk`.
+- Semantic HTML throughout; every image has descriptive `alt` text (empty `alt=""` only on purely decorative card thumbnails that repeat a caption already visible as a heading). Every page has exactly one `<h1>`.
+- Per-page `<title>`, meta description, and Open Graph tags (including a per-page `image`) via front matter (see `base.njk`).
+- Collection pages have a Home / Gallery / Collection breadcrumb trail with matching `BreadcrumbList` JSON-LD, so search engines can show the trail directly in results.
+- `sitemap.xml` and `robots.txt` are generated at build time from `src/sitemap.njk` and `src/robots.txt.njk`; non-content pages (`404.njk`, `thank-you.njk`) are excluded via `eleventyExcludeFromCollections`.
+- Colors are WCAG AA contrast-checked. `--color-gold` (used for icons and text on dark backgrounds) doesn't meet 4.5:1 against the cream backgrounds, so a separate `--color-gold-deep` token is used anywhere gold appears as hover/focus/current-page text on a light background (nav, collection pager, collection card titles).
 - No third-party trackers or ads. If you want visitor analytics, Cloudflare Web Analytics (free, no cookies) can be enabled from the Cloudflare dashboard without touching this codebase.
