@@ -90,7 +90,13 @@ To add a photo to an existing collection: export WebP + JPEG, drop both in `src/
 
 The contact form (`src/_includes/partials/contact-form.njk`, used on both `/about/` and `/contact/`) posts to `/api/contact`, handled by the Cloudflare Pages Function at `functions/api/contact.js`. Cloudflare Pages automatically deploys anything under `/functions` at the repo root alongside the static build — no `wrangler.toml` needed for this.
 
-The function validates the submission, rejects obvious spam via a honeypot field (`website` — hidden from real visitors with CSS, but bots tend to fill in every field they find), and sends the message as an email through [Resend](https://resend.com). On success it redirects to `/thank-you/`; on failure (missing fields, spam, or a Resend API error) it redirects back to `/contact/?error=1`, which the page detects via `src/assets/js/contact-status.js` to reveal an inline error banner.
+The function validates the submission and runs it through three spam checks before sending anything:
+
+1. A **honeypot field** (`website` — hidden from real visitors with CSS, but bots tend to fill in every field they find).
+2. A **timestamp check** — a hidden `formLoadedAt` field is stamped with the time the page loaded; submissions arriving less than 2 seconds later (bots blind-POSTing the endpoint) are rejected.
+3. A **[Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/)** challenge, verified server-side against Cloudflare's `siteverify` API — this is what actually stops bots that render the real page and skip the honeypot/timing tells.
+
+The honeypot and timestamp checks fail silently (pretend success, same as a real submission) so bots don't learn to route around them; a failed Turnstile check or missing/invalid form fields sends the visitor back to `/contact/?error=1`. On success the function sends the message as an email through [Resend](https://resend.com) and redirects to `/thank-you/`; on any failure (validation, spam, Resend API error) it redirects back to `/contact/?error=1`, which the page detects via `src/assets/js/contact-status.js` to reveal an inline error banner.
 
 **One-time setup before the form will actually deliver email:**
 
@@ -103,6 +109,15 @@ The function validates the submission, rejects obvious spam via a honeypot field
 Until step 2–4 are done, form submissions will fail gracefully (visitor sees the error banner with a mailto: fallback) rather than silently disappearing.
 
 MailChannels, the email service Cloudflare Workers/Pages used to integrate with for free, was deprecated — Resend is the current recommended replacement and is what this Function uses.
+
+**Turnstile setup (separate from Resend, also required for the form to accept submissions):**
+
+1. In the Cloudflare dashboard: **Turnstile → Add widget**. Give it a name, add `giftedhandscreations.com` as the domain, and choose the **Managed** challenge type (usually invisible to real visitors).
+2. Cloudflare gives you a **Site Key** and a **Secret Key**. The Site Key is public by design (it's embedded in the page HTML) — put it in `src/_data/site.json` as `turnstileSiteKey`, replacing the `YOUR_TURNSTILE_SITE_KEY` placeholder, and commit it.
+3. The Secret Key must stay private — add it in the Cloudflare Pages project as **Settings → Environment variables** → `TURNSTILE_SECRET_KEY` (encrypted), the same way as `RESEND_API_KEY`.
+4. Redeploy so both the new site content (with the real site key baked in) and the Function (reading the new secret) go out together.
+
+Until this is done, every submission fails the Turnstile check server-side and the visitor sees the error banner — so treat it as required, not optional, alongside the Resend setup above.
 
 ## Deployment (GitHub + Cloudflare Pages)
 

@@ -30,6 +30,12 @@
     <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
   </div>
 
+  <input type="hidden" name="formLoadedAt" id="formLoadedAt" value="">
+  <script>document.getElementById("formLoadedAt").value = Date.now();</script>
+
+  <div class="cf-turnstile" data-sitekey="{{ site.turnstileSiteKey }}"></div>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
   <div>
     <button class="btn btn--pill btn--dark" type="submit">{{ submitLabel }}</button>
   </div>
